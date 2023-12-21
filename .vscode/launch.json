@@ -5,13 +5,27 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Launch Chrome",
+      "port": 9222,
+      "request": "launch",
+      "type": "chrome",
+      "webRoot": "${workspaceFolder}",
+      "url": "http://localhost:3000"
+    },
+    {
       "type": "node",
       "request": "launch",
-      "name": "Launch Web Server",
+      "name": "Run Server",
       "skipFiles": [
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}/server.js"
+    }
+  ],
+  "compounds": [
+    {
+        "name": "Run Server & Launch Chrome",
+        "configurations": ["Run Server", "Launch Chrome"]
     }
   ]
 }
